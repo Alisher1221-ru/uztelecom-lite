@@ -1,8 +1,10 @@
 -- migrate:up
 CREATE TABLE IF NOT EXISTS product (
     `id` integer PRIMARY KEY AUTO_INCREMENT,
-    `title` varchar(100),
-    `description` varchar(100),
+    `title_uz` varchar(100),
+    `title_ru` varchar(100),
+    `description_uz` varchar(100),
+    `description_ru` varchar(100),
     `internet` varchar(100),
     `sms` varchar(100),
     `more_details` varchar(100),
@@ -26,7 +28,8 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS category (
     `id` integer PRIMARY KEY AUTO_INCREMENT,
-    `name` varchar(255),
+    `name_uz` varchar(255),
+    `name_ru` varchar(255),
     `parant_id` integer,
     `created_at` datetime DEFAULT NOW(),
     `updated_at` datetime DEFAULT NOW()

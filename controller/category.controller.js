@@ -2,19 +2,13 @@ import db from "../config/db.config.js"
 
 async function createdCategory(req, res) {
     try {
-        const {name, parant_id} = req.body
-        if (!name) {
+        const body = req.body
+        if (!body) {
             const error = new Error("body not fount")
             error.status = 402
             throw error
         }
-        const [[category]] = await db.query("SELECT * FROM category WHERE name = ?", name)
-        if (category) {
-            const error = new Error("category already exists")
-            error.status = 402
-            throw error
-        }
-        await db.query("INSERT INTO category SET ?", {name, parant_id})
+        await db.query("INSERT INTO category SET ?", body)
         res.json("category created")
     } catch (error) {
         res.status(error.status || 500).json({error: error.message})
@@ -104,6 +98,7 @@ export {createdCategory, getCategory, getCategorys, updateCategory, deleteCatego
 /////// test category
 
 // {
-//     "name": "pc",
+//     "name_uz": "pc",
+//     "name_ru": "pc",
 //     "parant_id": null
 // }

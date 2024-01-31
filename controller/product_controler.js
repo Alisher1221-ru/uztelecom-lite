@@ -102,8 +102,10 @@ export {
 
 
 // {
-//     "title": "Barakali 55",
-//     "description": "GSM Tariflar",
+//     "title_uz": "Barakali 55",
+//     "title_ru": "Barakali 55",
+//     "description_uz": "GSM Tariflar",
+//     "description_ru": "GSM Tariflar",
 //     "internet": "22 GB",
 //     "sms": "500 sms",
 //     "more_details": "none", || "12 so'm / daqiqa"
